@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 user-scalable=no">
+  <meta name="description" content="Really simple parallax scrolling">
+  <meta name="keywords" content="JavaScript, CSS, Scrolling effect">
+  <meta name="author" content="linxea">
+  <title>Scroll</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      font: 400 10px Lato, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      vertical-align: middle;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .scroll-height {
+      margin-top: -25vh;
+      background: white;
+    }
+
+    .title {
+      position: absolute;
+      background-color: black;
+      text-align: center;
+      width: 100vw;
+      height: 20vh;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      top: 0;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: white;
+      letter-spacing: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: #fff;
+      font-weight: 200;
+      letter-spacing: 0.2rem;
+      margin-top: 0;
+    }
+
+    .image-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      height: 1080px;
+      width: 1080px;
+      object-fit: none;
+      object-position: 0 0;
+    }
+
+    .smile {
+      object-position: 100% 100%;
+    }
+
+    .meh {
+      object-position: 0 0;
+    }
+
+    .small {
+      transform: scale(0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+    Level 1: Base layer with 100% viewport height.
+  -->
+  <div class="container">
+    <div class="image-wrapper">
+      <div class="small">
+        <img class="smile" src="../images/face.gif">
+      </div>
+    </div>
+  </div>
+
+  <!--
+    Level 2: A layer on top of base layer.
+  -->
+  <div class="container scroll-height ">
+    <div class="title">
+      <h1>Peek A Boo</h1>
+      <h2>by linxea</h2>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="small">
+        <img class="meh" src="../images/face.gif">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
